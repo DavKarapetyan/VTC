@@ -1,0 +1,134 @@
+﻿.page-header {
+    background-image: url('../image/dashed_bg.png');
+}
+
+.page-title {
+    color: black;
+    text-align: left;
+}
+
+.main-part {
+    nav {
+        .nav-tabs {
+            border: 0 !important;
+            padding-bottom: 5.382131324004305vh;
+
+            .nav-link {
+                border: 0;
+            }
+
+            .nav-item {
+                margin-right: 2.1875vw !important;
+                border-bottom: 3px solid transparent;
+
+                &.active {
+                    font-weight: 400;
+                    border-bottom: 3px solid #F6DC24;
+                    background-color: transparent;
+                    border-top: 0;
+                    border-left: 0;
+                    border-right: 0;
+                }
+
+                @media (max-width:768px) {
+                    display: block;
+                    margin-bottom: 10px;
+                    width: 50%;
+                }
+            }
+        }
+    }
+
+    .tab-content {
+        .card {
+            border: 1px solid #F6DC24;
+            box-sizing: border-box;
+            border-radius: 20px;
+
+            .card-header {
+                background-color: transparent;
+                text-align: center;
+                border: 0;
+
+                img {
+                    width: 100%;
+                    height: auto;
+                    padding-bottom: 14px;
+                    border-bottom: 4px solid #F6DC24;
+                }
+            }
+
+            .event-name {
+                font-weight: 600;
+                letter-spacing: 0.07em;
+                color: #000000;
+                margin-bottom: 14px;
+            }
+
+            .event-date {
+                font-style: normal;
+                font-weight: 400;
+                letter-spacing: 0.07em;
+                color: #000000;
+                margin-bottom: 30px;
+
+                span {
+                    font-weight: 600;
+                }
+            }
+
+            .event-desc {
+                font-style: normal;
+                font-weight: 400;
+                text-align: justify;
+                letter-spacing: 0.07em;
+                color: #000000;
+                margin-bottom: 30px;
+            }
+
+            .read-more {
+                font-style: normal;
+                font-weight: 400;
+                text-align: justify;
+                letter-spacing: 0.07em;
+                color: #000000;
+                cursor: pointer;
+
+                img {
+                    margin-left: 10px
+                }
+
+                &:hover {
+                    text-decoration: none;
+                }
+            }
+        }
+    }
+}
+
+.text-part {
+    font-weight: 300;
+    letter-spacing: 0.07em;
+    color: #000000;
+
+    p {
+        margin-bottom: 24px;
+    }
+}
+
+.item-img {
+    max-width: 400px;
+    max-height: 400px;
+    border: 1px solid #C6C6C6;
+    box-sizing: border-box;
+    border-radius: 20px;
+
+    div {
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        width: 400px;
+        height: 400px;
+        background-image: url('~/image/html.png');
+    }
+}

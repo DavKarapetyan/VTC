@@ -1,0 +1,72 @@
+﻿@model List<EventViewModel>
+
+@section header{
+    <link rel="stylesheet" href="~/css/news-events-and-main.min.css" />
+}
+
+<section class="page-header header-filter clear-filter" data-parallax="true">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-7 my-auto order-md-1 order-2">
+                <h1 class="page-title fs-64">News</h1>
+                <p class="section-desc fs-30">Follow VTC family news and the latest technology news on our website</p>
+            </div>
+            <div class="col-md-5 order-md-2 order-1 text-md-border-right text-center">
+                <img class="img-fluid" src="~/image/news.gif" alt="trainings" />
+            </div>
+        </div>
+    </div>
+</section>
+<section class="main-part">
+    <div class="container">
+        <nav>
+            <div class="nav nav-tabs" id="nav-tab" role="tablist">
+                <a class="nav-item nav-link fs-24 section-desc active" id="nav-upcoming-tab" data-toggle="tab" href="#nav-upcoming" role="tab" aria-controls="nav-upcoming" aria-selected="true">Upcoming</a>
+                <a class="nav-item nav-link fs-24 section-desc" id="nav-past-tab" data-toggle="tab" href="#nav-past" role="tab" aria-controls="nav-past" aria-selected="false">Past</a>
+            </div>
+        </nav>
+        <div class="tab-content" id="nav-tabContent">
+            <div class="tab-pane fade show active" id="nav-upcoming" role="tabpanel" aria-labelledby="nav-upcoming-tab">
+                <div class="row">
+                    @foreach(var item in Model.Where(a => a.Date.Date >= DateTime.Now.Date))
+                    {
+                        <div class="col-md-4 col-12">
+                            <div class="card">
+                                <div class="card-header">
+                                    <img src="~/image/event-img.png" alt="news" />
+                                </div>
+                                <div class="card-body">
+                                    <p class="event-name fs-20">@item.Name</p>
+                                    <p class="event-date fs-16">On: <span>@item.Date.AddTicks(item.Time.Ticks).ToString("dd.MM.yyyy HH:mm")</span></p>
+                                    <p class="event-desc fs-16">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when...</p>
+                                    <a class="read-more fs-16" asp-action="EventPage" asp-route-id="@item.Id">Read more <img src="~/image/icons/angle-right.png" alt="arrow" /></a>
+                                </div>
+                            </div>
+                        </div>
+                    }
+
+                </div>
+            </div>
+            <div class="tab-pane fade" id="nav-past" role="tabpanel" aria-labelledby="nav-past-tab">
+                <div class="row">
+                     @foreach(var item in Model.Where(a => a.Date.Date < DateTime.Now.Date))
+                    {
+                        <div class="col-md-4 col-12">
+                            <div class="card">
+                                <div class="card-header">
+                                    <img src="~/image/event-img.png" alt="news" />
+                                </div>
+                                <div class="card-body">
+                                    <p class="event-name fs-20">@item.Name</p>
+                                    <p class="event-date fs-16">On: <span>@item.Date.AddTicks(item.Time.Ticks).ToString("dd.MM.yyyy HH:mm")</span></p>
+                                    <p class="event-desc fs-16">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when...</p>
+                                    <a class="read-more fs-16" asp-action="MainPage">Read more <img src="~/image/icons/angle-right.png" alt="arrow" /></a>
+                                </div>
+                            </div>
+                        </div>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

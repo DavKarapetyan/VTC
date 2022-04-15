@@ -1,0 +1,112 @@
+﻿.page-header {
+    background-image: url('../image/yellow_bg.png');
+
+    h1 {
+        margin-bottom: 23px;
+        font-weight: 300;
+        letter-spacing: 0.1em;
+        color: #000000;
+        text-align: left;
+    }
+}
+
+.small-desc {
+    margin-top: 14.208826695371368vh;
+
+    .section-desc {
+        margin-bottom: 32px;
+    }
+
+    .desc {
+        p {
+            margin-bottom: 26px;
+
+            img {
+                padding-right: 16px;
+            }
+        }
+    }
+
+    .card {
+        margin-bottom: 44px;
+        border: 1px solid #F6DC24;
+        border-radius: 20px;
+
+        .card-header {
+            border: 0;
+            padding: 0;
+            border-radius: 20px;
+            background-color: white;
+
+            .btn-header-link {
+                display: block;
+                text-align: left;
+                box-sizing: border-box;
+                filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+                padding: 28px 30px;
+                border-radius: 20px;
+
+                &::after {
+                    content: "\f107";
+                    font-family: 'Font Awesome 5 Free';
+                    font-weight: 900;
+                    float: right;
+                }
+
+                &.collapsed {
+                    background: white;
+                    font-style: normal;
+                    font-weight: 600;
+                    line-height: 36px;
+                    letter-spacing: 0.07em;
+                    color: #000000;
+
+                    &::after {
+                        content: "\f106";
+                    }
+                }
+
+                &:focus {
+                    box-shadow: none !important;
+                }
+            }
+        }
+
+        .card-body {
+            p {
+                font-family: 'Open Sans';
+                font-style: normal;
+                font-weight: 400;
+                font-size: 20px;
+                line-height: 36px;
+                letter-spacing: 0.07em;
+                color: #000000;
+            }
+
+            ul {
+                li {
+                    font-family: 'Open Sans';
+                    font-style: normal;
+                    font-weight: 300;
+                    font-size: 18px;
+                    line-height: 36px;
+                    letter-spacing: 0.07em;
+                    color: #000000;
+                }
+            }
+        }
+
+        .collapsing {
+            line-height: 30px;
+        }
+
+        .collapse {
+            border: 0;
+
+            &.show {
+                line-height: 30px;
+                color: #222;
+            }
+        }
+    }
+}

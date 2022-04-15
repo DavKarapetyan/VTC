@@ -1,0 +1,48 @@
+﻿@model NewsViewModel
+
+@section header{
+    <link rel="stylesheet" href="~/css/news-events-and-main.min.css" />
+}
+<section class="page-header header-filter clear-filter" data-parallax="true">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-7 my-auto order-md-1 order-2">
+                <h1 class="page-title fs-64">@Model.Title</h1>
+                <p class="section-desc fs-30">On: <b>@Model.CreatedDate.ToString("dd.MM.yyyy")</b></p>
+            </div>
+            <div class="col-md-5 order-md-2 order-1 text-md-border-right text-center">
+                <img class="img-fluid" src="~/image/news.gif" alt="trainings" />
+            </div>
+        </div>
+    </div>
+</section>
+<section class="text-part">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                 @Html.Raw(Model.Description)
+            </div>
+        </div>
+    </div>
+</section>
+<section class="image-part">
+    <div class="container">
+        <div class="owl-carousel owl-carousel-images">
+        <div class="item-img">
+            <div style="background-image:url('@Url.Content("~/image/team/user3.webp")');"></div>
+        </div>
+        <div class="item-img">
+            <img src="../wwwroot../wwwroot/image/" class="team-member-img" alt="team-member" />
+        </div>
+        <div class="item-img">
+            <img src="~/image/team/user3.webp" class="team-member-img" alt="team-member"/>
+        </div>
+        <div class="item-img">
+            <img src="~/image/team/user4.webp" class="team-member-img" alt="team-member"/>
+        </div>
+        <div class="item-img">
+            <img src="~/image/team/user2.webp" class="team-member-img" alt="team-member"/>
+        </div>
+    </div>
+    </div>
+</section>
