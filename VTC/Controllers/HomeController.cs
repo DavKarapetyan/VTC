@@ -13,18 +13,21 @@ namespace VTC.Controllers
         private readonly IEventService _eventService;
         private readonly INewsService _newsService;
         private readonly IServiceService _seviceService;
+        private readonly ITrainingService _trainingService;
         private readonly IStringLocalizer<HomeController> _localizer;
 
         public HomeController(IMainService mainService,
             IEventService eventService,
             INewsService newsService,
             IServiceService seviceService,
+            ITrainingService trainingService,
             IStringLocalizer<HomeController> localizer)
         {
             _mainService = mainService;
             _eventService = eventService;
             _newsService = newsService;
             _seviceService = seviceService;
+            _trainingService = trainingService;
             _localizer = localizer;
         }
 
@@ -93,6 +96,19 @@ namespace VTC.Controllers
         public IActionResult Privacy()
         {
             return View();
+        }
+
+        public IActionResult Trainings(int statusId) {
+
+            var trainings = _trainingService.GetAll(statusId);
+
+            return View(trainings);
+        }
+
+        public async Task<IActionResult> TrainingPage(int trainingId) {
+            var training = await _trainingService.GetById(trainingId);
+
+            return View(training);
         }
 
         [HttpPost]

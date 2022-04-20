@@ -1,0 +1,160 @@
+﻿@model TrainingViewModel
+
+@section header{
+    <link rel="stylesheet" href="~/css/training.min.css" />
+}
+<section class="page-header header-filter clear-filter" data-parallax="true">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-7 my-auto order-md-1 order-2">
+                <h1 class="page-title fs-64">@Model.Name</h1>
+                <p class="section-desc fs-30">@Model.Description</p>
+                <p class="section-desc fs-20">The aim of the course is:</p>
+                <div class="row desc">
+                    <div class="col-md-1 col-2 my-auto"><img src="~/image/icons/circle-check-yellow.png" class="img-fluid" alt="icon" /></div>
+                    <div class="col-md-11 col-10">
+                        <span class="section-desc fs-20">get acquainted with the basics of WEB programming, structure, modern approaches,</span>
+                    </div>
+                </div>
+                <div class="row desc">
+                    <div class="col-md-1 col-2 my-auto"><img src="~/image/icons/circle-check-yellow.png" class="img-fluid" alt="icon" /></div>
+                    <div class="col-md-11 col-10">
+                        <span class="section-desc fs-20">study and use the HTML language of web programming and its capabilities</span>
+                    </div>
+                </div>
+                <div class="row desc">
+                    <div class="col-md-1 col-2 my-auto"><img src="~/image/icons/circle-check-yellow.png" class="img-fluid" alt="icon" /></div>
+                    <div class="col-md-11 col-10">
+                        <span class="section-desc fs-20">build WEB page with HTML and design with CSS</span>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-5 order-md-2 order-1 text-md-border-right text-center">
+                <img class="img-fluid" src="~/image/html.png" alt="trainings" />
+            </div>
+        </div>
+    </div>
+</section>
+<section class="main-topics">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-10 col-12">
+                <p class="section-desc fs-30 mb-110">Vanadzor Technology Center and Enterprise Incubator Foundation announces WEB programming basics (HTML / CSS) course.</p>
+            </div>
+            <div class="col-12">
+                <p class="section-desc fs-48 mb-44">Main topics:</p>
+            </div>
+            <div class="col-md-3 col-12">
+                <ul>
+                    <li>Introduction to HTML</li>
+                    <li>The concept of tag and attribute</li>
+                    <li>Basic HTML tags</li>
+                    <li>Block and line tags</li>
+                    <li>Work with text</li>
+                    <li>Posting pictures</li>
+                    <li>Lists and links</li>
+                    <li>Working with spreadsheets</li>
+                </ul>
+            </div>
+            <div class="col-md-3 col-12">
+                <ul>
+                    <li>Introduction to HTML</li>
+                    <li>The concept of tag and attribute</li>
+                    <li>Basic HTML tags</li>
+                    <li>Block and line tags</li>
+                    <li>Work with text</li>
+                    <li>Posting pictures</li>
+                    <li>Lists and links</li>
+                    <li>Working with spreadsheets</li>
+                </ul>
+            </div>
+            <div class="col-md-3 col-12">
+                <ul>
+                    <li>Introduction to HTML</li>
+                    <li>The concept of tag and attribute</li>
+                    <li>Basic HTML tags</li>
+                    <li>Block and line tags</li>
+                    <li>Work with text</li>
+                    <li>Posting pictures</li>
+                    <li>Lists and links</li>
+                    <li>Working with spreadsheets</li>
+                </ul>
+            </div>
+            <div class="col-md-3 col-12 price">
+                <p>Course start: <span>Periodic</span></p>
+                <p>The duration of the course: <span>30 hours</span></p>
+                <p>The cost of the course: <span>32,000 AMD</span></p>
+                <p>Selection of participants through interviews.</p>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="teacher-info">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-3 col-12 p-0 my-auto">
+                <img src="~/image/team/user1.webp" class="teacher-img img-fluid" alt="student" />
+            </div>
+            <div class="col-md-9 col-12 p-0">
+                <p class="teacher-name fs-24">Teacher name</p>
+                <p class="teacher-workplace fs-20">Teacher workplace</p>
+                <p class="review">
+                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="register">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-7 col-12">
+                <p class="section-desc fs-30">For course registration fill this fields</p>
+                <img class="img-fluid" src="~/image/register.png" alt="register" />
+            </div>
+            <div class="col-md-5 col-12">
+                <form>
+                    <div class="row">
+                        <div class="col-md-6 col-12">
+                            <input placeholder="First name" class="reg-input" type="text" autocomplete="off" />
+                        </div>
+                        <div class="col-md-6 col-12">
+                            <input placeholder="Last name" class="reg-input" type="text" autocomplete="off" />
+                        </div>
+                        <div class="col-md-12 col-12">
+                            <input placeholder="Email" class="reg-input" type="email" autocomplete="off" />
+                        </div>
+                        <div class="col-md-12 col-12">
+                            <input placeholder="Phone" class="reg-input" type="tel" autocomplete="off" />
+                        </div>
+                        <div class="col-md-12 col-12">
+                            <input placeholder="Address" class="reg-input" type="text" autocomplete="off" />
+                        </div>
+                        <div class="col-md-12 col-12">
+                            <input placeholder="Age" class="reg-input mb-2" type="text" autocomplete="off" />
+                            <small>The course is open to 16 year olds</small>
+                        </div>
+                        <div class="col-12">
+                            <p class="secont-stage">Phase (the second stage is open to those who know the main topics of the first stage)</p>
+                        </div>
+                        <div class="col-md-6 col-12">
+                            <input class="input-radio" type="radio" id="courseFirstStage" name="courseStage" value="1">
+                            <label for="courseFirstStage">course first stage</label><br>
+                        </div>
+                        <div class="col-md-6 col-12">
+                            <input class="input-radio" type="radio" id="courseSecondStage" name="courseStage" value="2">
+                            <label for="courseSecondStage">course second stage</label><br>
+                        </div>
+                        <div class="col-12 aggree">
+                            <input class="input-radio i_aggree" type="checkbox" id="aggrement" name="aggrement">
+                            <label for="aggrement">I hereby express my consent for the Enterprise Incubator Foundation to collect, process and use the personal data provided by me within the framework of the announced trainings, processes, and related documentation.</label><br>
+                        </div>
+                        <div class="col-12 text-left">
+                            <button type="submit" class="btn btn-yellow" disabled>Register</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>

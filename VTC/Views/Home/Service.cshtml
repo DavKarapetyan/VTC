@@ -1,12 +1,5 @@
 ﻿@model List<ServiceViewModel>
 
-@*@foreach(var item in Model)
-{
-    <h1>@item.Name</h1>    
-    <h6>@item.Description</h6>    
-}*@
-
-
 @section header{
 <link rel="stylesheet" href="~/css/services.min.css" />
 }
@@ -52,141 +45,12 @@
                 <div id="services@(item.Id)" class="collapse" aria-labelledby="serviceshead@(item.Id)" data-parent="#services">
                     <div class="card-body">
                         @Html.Raw(item.Description)
-                       @* <p>We provide advice to companies and teams at different stages of development in the following areas:</p>
-                        <ul>
-                            <li>business management</li>
-                            <li>legal</li>
-                            <li>financial</li>
-                            <li>sales promotion</li>
-                            <li>We support companies to develop appropriate development strategies</li>
-                        </ul>
-                        <p>We support:</p>
-                        <ul>
-                            <li>to improve the company's activity</li>
-                            <li>reduce costs</li>
-                            <li>find the latest technological solutions</li>
-                            <li>apply innovative approaches in business and upgrade it to ensure continuous growth and achieve serious results</li>
-                        </ul>
-                        <p>The consulting services we provide are:</p>
-                        <ul>
-                            <li>Partner identification support</li>
-                            <li>Legal and accounting consulting</li>
-                            <li>Fundraising support, investment and grant search assistance</li>
-                            <li>Business consulting, support for the preparation and conduct of negotiation processes</li>
-                            <li>Marketing Support: Marketing and Advertising Planning Support, Product Positioning,</li>
-                            <li>Business planning consulting: strategic and support for medium-term planning, etc</li>
-                            <li>Support for the development of human resources and professional development of specialists, provision of courses, seminars and master classes</li>
-                            <li>Business support and consulting, improvement of workforce skills, provision of premises and  infrastructure.</li>
-                        </ul>*@
                     </div>
                 </div>
             </div>
             }
            
-           @* <div class="card">
-                <div class="card-header" id="serviceshead2">
-                    <a href="#" class="btn btn-header-link collapsed fs-24" data-toggle="collapse" data-target="#services2"
-                       aria-expanded="true" aria-controls="services2">Acceleration</a>
-                </div>
-
-                <div id="services2" class="collapse" aria-labelledby="serviceshead2" data-parent="#services">
-                    <div class="card-body">
-                        <p>Enterprise Incubator Foundation in the framework of Vanadzor Technology Center implements acceleration program (technology business promotion) for IT specialists, engineers and students</p>
-                        <p>The program promotes new product development in IT and engineering by supporting local software developer entrepreneurs, engineers, start-ups, IT specialists and students. </p>
-                        <p>The following services will be available to VTC project participants</p>
-                        <ul>
-                            <li>mentoring</li>
-                            <li>marketing</li>
-                            <li>planning</li>
-                            <li>project viability study</li>
-                            <li>business model design</li>
-                            <li>financial and legal</li>
-                            <li>as well as support to acceleration teaming in the activities of technology and product design, prototyping and testing.</li>
-                        </ul>
-                        <p>For the acceleration period we provide computer and internet equipped 2-4 working places to teams.</p>
-                        <p>VTC works with Armenian ICT community to support teams in development phases, particularly</p>
-                        <ul>
-                            <li>Idea generation and project viability assessment,</li>
-                            <li>Product/project prototyping and testing,</li>
-                            <li>Business plan design</li>
-                            <li>Support in local and international markets</li>
-                            <li>Access to grants and other relevant financial programs</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-            <div class="card">
-                <div class="card-header" id="serviceshead3">
-                    <a href="#" class="btn btn-header-link collapsed fs-24" data-toggle="collapse" data-target="#services3"
-                       aria-expanded="true" aria-controls="services3">Staff training</a>
-                </div>
-
-                <div id="services3" class="collapse" aria-labelledby="serviceshead3" data-parent="#services">
-                    <div class="card-body">
-                        <p>One of VTC’s essential components is professional skill development and implementation of various educational programs.</p>
-                        <p>One of VTC’s essential components is professional skill development and implementation of various educational programs.</p>
-                        <p>We strive to create a strong link between technical universities and the field which will encourage cooperation and will strengthen the role of universities as active centers of research.</p>
-                        <p>Trainings and seminars are conducted by experienced professional in the field.</p>
-                        <p>At the end of the trainings students have the chance to find jobs in companies operating at VTC.</p>
-                        <p>Technical professional trainings which are the core of our educational programs are aimed at students of different age groups and academic progress in IT and engineering.</p>
-                        <p>By making international knowledge available and by inviting best trainers we organize trainings in various themes which are selected based on need assessment of engineering and ICT companies.</p>
-                        <p>There are engineering and prototype laboratories at VTC.</p>
-                        <p>VTC implements the following educational programs in its laboratories both short-term (up to 6 months), and long-term – 6 months and more;</p>
-                        <ol>
-                            <li>Computer engineering courses – C Fundamental; LabView; Discrete Mathematics; OSE: Windows, Unix, Linux; Algorithms Theory; Logic Synthesis; Verilog; Digital Design; Digital Testing</li>
-                            <li>Basic web and mobile programming – Algorithms and data structures; C, C++, C#, Java Script, objective C, PHP, HTML; Database Programming; Interface Design</li>
-                            <li>Computer engineering design courses – AutoCAD, SolidWorks, CATIA</li>
-                        </ol>
-                        <p class="section-desc">Training on business School programs</p>
-                        <p>In the process of modern economy development a great importance is given to the development technology sphere. The availability of quality specialists is essential for the sphere development. School has a very important role in the formation and career guidance of specialists. In order to support natural science teaching at schools projects are being implemented in the frameworks of which children have the possibility to carry out their lab experients and practical courses in equipped laboratories; pupils take part in English language, programming trainings and various other career based clubs.The program is designed for 8-18 year-olds and the main goals are</p>
-                        <ul>
-                            <li>Support schools in the process of improving educational programs</li>
-                            <li>Modern technology application in educational processes</li>
-                            <li>Support schools in the process of teaching natural sciences</li>
-                            <li>Promotion and engagement of school children in IT sphere</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-            <div class="card">
-                <div class="card-header" id="serviceshead4">
-                    <a href="#" class="btn btn-header-link collapsed fs-24" data-toggle="collapse" data-target="#services4"
-                       aria-expanded="true" aria-controls="services4">Provision of premises</a>
-                </div>
-
-                <div id="services4" class="collapse" aria-labelledby="serviceshead4" data-parent="#services">
-                    <div class="card-body">
-                        <p>Enterprise Incubator Foundation in the framework of Vanadzor Technology Center implements acceleration program (technology business promotion) for IT specialists, engineers and students</p>
-                        <p>The program promotes new product development in IT and engineering by supporting local software developer entrepreneurs, engineers, start-ups, IT specialists and students. </p>
-                        <p>Enterprise Incubator Foundation in the framework of Vanadzor Technology Center implements acceleration program (technology business promotion) for IT specialists, engineers and students</p>
-                        <ul>
-                            <li>business management</li>
-                            <li>legal</li>
-                            <li>financial</li>
-                            <li>sales promotion</li>
-                            <li>We support companies to develop appropriate development strategies</li>
-                        </ul>
-                        <p>We support:</p>
-                        <ul>
-                            <li>to improve the company's activity</li>
-                            <li>reduce costs</li>
-                            <li>find the latest technological solutions</li>
-                            <li>apply innovative approaches in business and upgrade it to ensure continuous growth and achieve serious results</li>
-                        </ul>
-                        <p>The consulting services we provide are:</p>
-                        <ul>
-                            <li>Partner identification support</li>
-                            <li>Legal and accounting consulting</li>
-                            <li>Fundraising support, investment and grant search assistance</li>
-                            <li>Business consulting, support for the preparation and conduct of negotiation processes</li>
-                            <li>Marketing Support: Marketing and Advertising Planning Support, Product Positioning,</li>
-                            <li>Business planning consulting: strategic and support for medium-term planning, etc</li>
-                            <li>Support for the development of human resources and professional development of specialists, provision of courses, seminars and master classes</li>
-                            <li>Business support and consulting, improvement of workforce skills, provision of premises and  infrastructure.</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>*@
+          
         </div>
     </div>
 </section>

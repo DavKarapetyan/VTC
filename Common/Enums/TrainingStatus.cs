@@ -8,8 +8,8 @@ namespace VTC.Common.Enums
 {
     public enum TrainingStatus
     {
-        Students = 1,
-
+        Traingins = 1,
+        TrainginsStudents,
         USAID
     }
 }

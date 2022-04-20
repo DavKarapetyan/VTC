@@ -8,7 +8,6 @@
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" />
     <link rel="stylesheet" href="~/css/navigation.min.css" />
-    <link rel="stylesheet" href="~/VTC.styles.css" asp-append-version="true" />
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css" rel="stylesheet" />
     <link rel='stylesheet prefetch' href='https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css'>
@@ -33,9 +32,9 @@
                                     <li class="nav-item pl-4 pl-md-0 ml-0 ml-md-5 active">
                                         <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Trainings</a>
                                         <div class="dropdown-menu">
-                                            <a class="dropdown-item" asp-action="TrainingsList">Trainings</a>
-                                            <a class="dropdown-item" asp-action="#">Students trainings</a>
-                                            <a class="dropdown-item" asp-action="#">USAID</a>
+                                            <a class="dropdown-item" asp-action="Trainings" asp-route-statusId="1" >Trainings</a>
+                                            <a class="dropdown-item" asp-action="Trainings" asp-route-statusId="2">Students trainings</a>
+                                            <a class="dropdown-item" asp-action="Trainings" asp-route-statusId="3">USAID</a>
                                         </div>
                                     </li>
                                     <li class="nav-item pl-4 pl-md-0 ml-0 ml-md-5">
@@ -72,7 +71,7 @@
     <div>
         <img class="footer-img" src="~/image/footer.png" />
     </div>
-    <footer class="border-top footer text-muted mt-150" style="display: none">
+    <footer class="border-top footer text-muted mt-150">
         <div class="container">
             <div class="row">
                 <div class="col-md-3 col-12 text-md-left text-center">

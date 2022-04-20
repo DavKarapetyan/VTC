@@ -1,0 +1,133 @@
+﻿@model List<TrainingViewModel>
+
+@section header{
+<link rel="stylesheet" href="~/css/trainings.min.css" />
+}
+<section class="page-header header-filter clear-filter" data-parallax="true">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 my-auto order-md-1 order-2">
+                <h1 class="page-title fs-64">Trainings</h1>
+                <p class="section-desc fs-24">EIF and VTC Announcements of information technology programming, basic mathematics, English, capacity building new start of multimedia courses, on a paid basis. </p>
+                <div class="row">
+                    <div class="col-4">
+                        <p class="result-number fs-48">2000+</p>
+                        <p class="result-name fs-24">students</p>
+                    </div>
+                    <div class="col-4">
+                        <p class="result-number fs-48">200+</p>
+                        <p class="result-name fs-24">courses</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 order-md-2 order-1">
+                <img class="img-fluid" src="~/image/training.png" alt="trainings" />
+            </div>
+        </div>
+    </div>
+</section>
+<section class="tabs">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <h2 class="fs-48 section-title">Our Courses</h2>
+            </div>
+        </div>
+        <nav>
+            <div class="nav nav-tabs" id="nav-tab" role="tablist">
+                <a class="nav-item nav-link fs-24 section-desc active" id="nav-tab" data-toggle="tab" href="#nav" role="tab" aria-controls="nav" aria-selected="true">All</a>
+                <a class="nav-item nav-link fs-24 section-desc" id="nav-prog-tab" data-toggle="tab" href="#nav-prog" role="tab" aria-controls="nav-prog" aria-selected="true">Programming</a>
+                <a class="nav-item nav-link fs-24 section-desc" id="nav-engin-tab" data-toggle="tab" href="#nav-engin" role="tab" aria-controls="nav-engin" aria-selected="false">Engineering</a>
+                <a class="nav-item nav-link fs-24 section-desc" id="nav-design-tab" data-toggle="tab" href="#nav-design" role="tab" aria-controls="nav-design" aria-selected="false">Design</a>
+                <a class="nav-item nav-link fs-24 section-desc" id="nav-other-tab" data-toggle="tab" href="#nav-other" role="tab" aria-controls="nav-other" aria-selected="false">Other</a>
+            </div>
+        </nav>
+        <div class="tab-content" id="nav-tabContent">
+
+            <div class="tab-pane fade show active" id="nav-tab" role="tabpanel" aria-labelledby="nav-tab">
+                <div class="row">
+                    @foreach (var item in Model)
+                    {
+                        <div class="col-md-3 col-12">
+                            <div class="training">
+                                <a asp-action="TrainingPage" asp-route-trainingId="@item.Id">
+                                    <div class="row">
+                                        <div class="col-3">
+                                            <img class="img-fluid" src="~/image/trainings/web_programming.svg" alt="training" />
+                                        </div>
+                                        <div class="col-9 my-auto">
+                                            <p class="fs-20">@item.Name</p>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="training-review section-paddings">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <h2 class="fs-48 section-title">Success Stories</h2>
+            </div>
+        </div>
+        <div class="owl-carousel owl-carousel-student-review">
+            <div class="student-review row">
+                <div class="col-md-3 col-12 p-0 my-auto">
+                    <img src="~/image/student.webp" class="student-img img-fluid" alt="student" />
+                </div>
+                <div class="col-md-9 col-12 p-0">
+                    <p class="student-name fs-24">Name Surname</p>
+                    <p class="course-name fs-24">Course Name / Date</p>
+                    <p class="teacher-name fs-24">Teacher Name</p>
+                    <p class="review">
+                        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+                    </p>
+                </div>
+            </div>
+            <div class="student-review row">
+                <div class="col-md-3 col-12 p-0 my-auto">
+                    <img src="~/image/student.webp" class="student-img img-fluid" alt="student" />
+                </div>
+                <div class="col-md-9 col-12 p-0">
+                    <p class="student-name fs-24">Name Surname</p>
+                    <p class="course-name fs-24">Course Name / Date</p>
+                    <p class="teacher-name fs-24">Teacher Name</p>
+                    <p class="review">
+                        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+                    </p>
+                </div>
+            </div>
+            <div class="student-review row">
+                <div class="col-md-3 col-12 p-0 my-auto">
+                    <img src="~/image/student.webp" class="student-img img-fluid" alt="student" />
+                </div>
+                <div class="col-md-9 col-12 p-0">
+                    <p class="student-name fs-24">Name Surname</p>
+                    <p class="course-name fs-24">Course Name / Date</p>
+                    <p class="teacher-name fs-24">Teacher Name</p>
+                    <p class="review">
+                        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+                    </p>
+                </div>
+            </div>
+            <div class="student-review row">
+                <div class="col-md-3 col-12 p-0 my-auto">
+                    <img src="~/image/student.webp" class="student-img img-fluid" alt="student" />
+                </div>
+                <div class="col-md-9 col-12 p-0">
+                    <p class="student-name fs-24">Name Surname</p>
+                    <p class="course-name fs-24">Course Name / Date</p>
+                    <p class="teacher-name fs-24">Teacher Name</p>
+                    <p class="review">
+                        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

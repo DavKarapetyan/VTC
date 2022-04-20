@@ -19,6 +19,7 @@ builder.Services.AddScoped<IMainService, MainService>();
 builder.Services.AddScoped<IEventService, EventService>();
 builder.Services.AddScoped<INewsService, NewsService>();
 builder.Services.AddScoped<IServiceService, ServiceService>();
+builder.Services.AddScoped<ITrainingService, TrainingService>();
 
 builder.Services.AddLocalization(l => l.ResourcesPath = "Resources");
 
@@ -34,6 +35,7 @@ if (!app.Environment.IsDevelopment())
     // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
     app.UseHsts();
 }
+
 var cultures = new[] {
     new CultureInfo("am"),
     new CultureInfo("ru"),

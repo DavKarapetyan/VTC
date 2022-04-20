@@ -1,0 +1,42 @@
+﻿@model EventViewModel
+
+@{
+    var text = ((Model != null) ? "Edit Event" : "Add Event");
+}
+
+<div class="modal-content">
+    <form asp-action="ManageEvent" asp-controller="Admin">
+
+        <input hidden value="@((Model != null) ? Model.Id : 0)"/>
+        <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">@text</h5>
+          
+        </div>
+        <div class="modal-body">
+            <div class="input-group mb-3">
+                <label asp-for="Name" ></label>
+                <input asp-for="Name" class="form-control"/>
+            </div>
+             <div class="input-group mb-3">
+                <label asp-for="Description"></label>
+                <input asp-for="Description" class="form-control"/>
+            </div>
+             <div class="input-group mb-3">
+                <label asp-for="Date"></label>
+                <input asp-for="Date" class="form-control"/>
+            </div>
+             <div class="input-group mb-3">
+                <label asp-for="Time"></label>
+                <input asp-for="Time" class="form-control"/>
+            </div>
+            <div class="input-group mb-3">
+                <label asp-for="MainImage"></label>
+                <input asp-for="MainImage" class="form-control"/>
+            </div>
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            <button type="submit" class="btn btn-primary">Save changes</button>
+        </div>
+    </form>
+</div>

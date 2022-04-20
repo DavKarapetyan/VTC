@@ -8,5 +8,6 @@ namespace VTC.Common.ViewModels
         public string Name { get; set; }
         public string Description { get; set; }
         public TrainingStatus Status { get; set; }
+        public TrainingType Type { get; set; }
     }
 }

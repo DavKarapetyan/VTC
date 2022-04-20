@@ -37,6 +37,7 @@
   border: 1px solid #F6DC24;
   box-sizing: border-box;
   border-radius: 20px;
+  margin-bottom: 24px;
 }
 .main-part .tab-content .card .card-header {
   background-color: transparent;
