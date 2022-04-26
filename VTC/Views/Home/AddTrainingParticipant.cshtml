@@ -1,0 +1,41 @@
+﻿@model TrainingParticipantViewModel
+<form method="post" asp-action="AddTrainingParticipant" asp-controller="Home">
+    <div class="row">
+        <input hidden asp-for="TrainingId" value="@Model.TrainingId"/>
+        <div class="col-md-6 col-12">
+            <input asp-for="FirstName" placeholder="First name" class="reg-input" type="text" autocomplete="off" />
+        </div>
+        <div class="col-md-6 col-12">
+            <input asp-for="LastName" placeholder="Last name" class="reg-input" type="text" autocomplete="off" />
+        </div>
+        <div class="col-md-12 col-12">
+            <input asp-for="Email" placeholder="Email" class="reg-input" type="email" autocomplete="off" />
+        </div>
+        <div class="col-md-12 col-12">
+            <input asp-for="PhoneNumber" placeholder="Phone" class="reg-input" type="tel" autocomplete="off" />
+        </div>
+        <div class="col-md-12 col-12">
+            <input asp-for="Address" placeholder="Address" class="reg-input" type="text" autocomplete="off" />
+        </div>
+        <div class="col-md-12 col-12">
+            <input asp-for="DateOfBirth" placeholder="Age" class="reg-input mb-2"  autocomplete="off" />
+            <small>The course is open to 16 year olds</small>
+        </div>
+        <div class="col-12">
+            <p class="secont-stage">Phase (the second stage is open to those who know the main topics of the first stage)</p>
+        </div>
+        <div class="col-md-6 col-12">
+            <input asp-for="Level" placeholder="Level" class="reg-input mb-2"  autocomplete="off" />
+            <small>The course is open to 16 year olds</small>
+        </div>
+        
+        
+        <div class="col-12 aggree">
+            <input class="input-radio i_aggree" type="checkbox" id="aggrement" name="aggrement">
+            <label for="aggrement">I hereby express my consent for the Enterprise Incubator Foundation to collect, process and use the personal data provided by me within the framework of the announced trainings, processes, and related documentation.</label><br>
+        </div>
+        <div class="col-12 text-left">
+            <button type="submit" class="btn btn-yellow" disabled>Register</button>
+        </div>
+    </div>
+</form>

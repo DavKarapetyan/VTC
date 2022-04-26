@@ -1,13 +1,17 @@
 ﻿@model TrainingViewModel
-
+@{
+    var id = @Model.Id;
+}
 @section header{
-    <link rel="stylesheet" href="~/css/training.min.css" />
+<link rel="stylesheet" href="~/css/training.min.css" />
 }
 <section class="page-header header-filter clear-filter" data-parallax="true">
     <div class="container">
         <div class="row">
             <div class="col-md-7 my-auto order-md-1 order-2">
+
                 <h1 class="page-title fs-64">@Model.Name</h1>
+                
                 <p class="section-desc fs-30">@Model.Description</p>
                 <p class="section-desc fs-20">The aim of the course is:</p>
                 <div class="row desc">
@@ -44,42 +48,19 @@
             <div class="col-12">
                 <p class="section-desc fs-48 mb-44">Main topics:</p>
             </div>
+
             <div class="col-md-3 col-12">
-                <ul>
-                    <li>Introduction to HTML</li>
-                    <li>The concept of tag and attribute</li>
-                    <li>Basic HTML tags</li>
-                    <li>Block and line tags</li>
-                    <li>Work with text</li>
-                    <li>Posting pictures</li>
-                    <li>Lists and links</li>
-                    <li>Working with spreadsheets</li>
-                </ul>
+                @foreach (var item in @Model.Topics)
+                {
+                    <ul>
+                        <li>@item.Name</li>
+
+                    </ul>
+                }
             </div>
-            <div class="col-md-3 col-12">
-                <ul>
-                    <li>Introduction to HTML</li>
-                    <li>The concept of tag and attribute</li>
-                    <li>Basic HTML tags</li>
-                    <li>Block and line tags</li>
-                    <li>Work with text</li>
-                    <li>Posting pictures</li>
-                    <li>Lists and links</li>
-                    <li>Working with spreadsheets</li>
-                </ul>
-            </div>
-            <div class="col-md-3 col-12">
-                <ul>
-                    <li>Introduction to HTML</li>
-                    <li>The concept of tag and attribute</li>
-                    <li>Basic HTML tags</li>
-                    <li>Block and line tags</li>
-                    <li>Work with text</li>
-                    <li>Posting pictures</li>
-                    <li>Lists and links</li>
-                    <li>Working with spreadsheets</li>
-                </ul>
-            </div>
+
+
+
             <div class="col-md-3 col-12 price">
                 <p>Course start: <span>Periodic</span></p>
                 <p>The duration of the course: <span>30 hours</span></p>
@@ -113,47 +94,9 @@
                 <img class="img-fluid" src="~/image/register.png" alt="register" />
             </div>
             <div class="col-md-5 col-12">
-                <form>
-                    <div class="row">
-                        <div class="col-md-6 col-12">
-                            <input placeholder="First name" class="reg-input" type="text" autocomplete="off" />
-                        </div>
-                        <div class="col-md-6 col-12">
-                            <input placeholder="Last name" class="reg-input" type="text" autocomplete="off" />
-                        </div>
-                        <div class="col-md-12 col-12">
-                            <input placeholder="Email" class="reg-input" type="email" autocomplete="off" />
-                        </div>
-                        <div class="col-md-12 col-12">
-                            <input placeholder="Phone" class="reg-input" type="tel" autocomplete="off" />
-                        </div>
-                        <div class="col-md-12 col-12">
-                            <input placeholder="Address" class="reg-input" type="text" autocomplete="off" />
-                        </div>
-                        <div class="col-md-12 col-12">
-                            <input placeholder="Age" class="reg-input mb-2" type="text" autocomplete="off" />
-                            <small>The course is open to 16 year olds</small>
-                        </div>
-                        <div class="col-12">
-                            <p class="secont-stage">Phase (the second stage is open to those who know the main topics of the first stage)</p>
-                        </div>
-                        <div class="col-md-6 col-12">
-                            <input class="input-radio" type="radio" id="courseFirstStage" name="courseStage" value="1">
-                            <label for="courseFirstStage">course first stage</label><br>
-                        </div>
-                        <div class="col-md-6 col-12">
-                            <input class="input-radio" type="radio" id="courseSecondStage" name="courseStage" value="2">
-                            <label for="courseSecondStage">course second stage</label><br>
-                        </div>
-                        <div class="col-12 aggree">
-                            <input class="input-radio i_aggree" type="checkbox" id="aggrement" name="aggrement">
-                            <label for="aggrement">I hereby express my consent for the Enterprise Incubator Foundation to collect, process and use the personal data provided by me within the framework of the announced trainings, processes, and related documentation.</label><br>
-                        </div>
-                        <div class="col-12 text-left">
-                            <button type="submit" class="btn btn-yellow" disabled>Register</button>
-                        </div>
-                    </div>
-                </form>
+                
+                
+                <partial name="AddTrainingParticipant" model="new TrainingParticipantViewModel() {TrainingId = id}"/>
             </div>
         </div>
     </div>
