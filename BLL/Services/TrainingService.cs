@@ -60,6 +60,18 @@ namespace VTC.BLL.Services
             return trainings;
         }
 
+        public  List<TrainingTopicViewModel> TrainingTopics(int id) {
+            var trainingTopics = _context.TrainingTopics.Where(a => a.TrainingId == id)
+                .Select(a => new TrainingTopicViewModel { 
+                    Id = a.Id,
+                    Name = a.Name,
+                    TrainingId = a.TrainingId
+                }).ToList();
+
+            return trainingTopics;
+        }
+
+
         public async Task<TrainingViewModel> GetById(int id)
         {
             var training = _context.Trainings.Where(a => a.Id == id).Select(a => new TrainingViewModel { 
@@ -68,6 +80,7 @@ namespace VTC.BLL.Services
                 Name = a.Name,
                 Id = a.Id,
                 Description = a.Description,
+                
             }).FirstOrDefault();
 
             return training;
@@ -79,6 +92,47 @@ namespace VTC.BLL.Services
             training.IsDeleted = true;
             _context.SaveChanges();
 
+        }
+
+        public List<TrainingParticipantViewModel> trainingParticipants() {
+            var trainingParticipants = _context.TrainingParticipants.Select(a => new TrainingParticipantViewModel
+            {
+                Id = a.Id,
+                Address = a.Address,
+                DateOfBirth = a.DateOfBirth,
+                Email = a.Email,
+                FirstName = a.FirstName,
+                LastName = a.LastName,
+                Level = a.Level,
+                PhoneNumber = a.PhoneNumber,
+                TrainingId = a.TrainingId,
+                
+            }).ToList();
+
+            return trainingParticipants;
+        }
+        public async Task AddTrainingPart(TrainingParticipantViewModel model) {
+            TrainingParticipant trainingParticipant = new TrainingParticipant()
+            {
+                Id = model.Id,
+                FirstName = model.FirstName,
+                LastName = model.LastName,
+                Address = model.Address,
+                DateOfBirth = model.DateOfBirth,
+                Email = model.Email,
+                Level = model.Level,
+                PhoneNumber = model.PhoneNumber,
+                TrainingId = model.TrainingId
+            };
+            _context.TrainingParticipants.Add(trainingParticipant);
+
+            await _context.SaveChangesAsync();
+        }
+        public async Task RemoveTrainingPart(int id) {
+            var deletedTrainingPart = _context.TrainingParticipants.Where(a => a.Id == id).FirstOrDefault();
+            deletedTrainingPart.IsDeleted = true;
+
+            await _context.SaveChangesAsync();
         }
     }
 }

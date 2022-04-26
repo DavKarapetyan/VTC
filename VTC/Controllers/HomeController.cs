@@ -2,8 +2,11 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Localization;
 using System.Diagnostics;
+using System.Dynamic;
 using VTC.BLL.Services.Interfaces;
 using VTC.Models;
+using VTC.Common.ViewModels;
+using VTC.DataAccess.Entities;
 
 namespace VTC.Controllers
 {
@@ -101,15 +104,39 @@ namespace VTC.Controllers
         public IActionResult Trainings(int statusId) {
 
             var trainings = _trainingService.GetAll(statusId);
-
+            
             return View(trainings);
         }
-
+        
         public async Task<IActionResult> TrainingPage(int trainingId) {
-            var training = await _trainingService.GetById(trainingId);
 
+            TrainingViewModel training = new();
+            training = await _trainingService.GetById(trainingId);
+            training.Topics = _trainingService.TrainingTopics(trainingId);
             return View(training);
         }
+
+        public async Task<IActionResult> AddTrainingParticipant(int? id)
+        {
+            if (id.HasValue)
+            {
+                var trainingPart = await _trainingService.GetById(id.Value);
+                return View(trainingPart);
+            }
+
+            return View();
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> AddTrainingParticipant(TrainingParticipantViewModel model)
+        {
+            
+
+            _trainingService.AddTrainingPart(model);
+            return RedirectToAction("Index");
+        }
+
+
 
         [HttpPost]
         public IActionResult SetLanguage(string culture, string returnUrl)

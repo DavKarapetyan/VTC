@@ -10,17 +10,19 @@ namespace VTC.Controllers
         private readonly IEventService _eventService;
         private readonly IServiceService _serviceService;
         private readonly INewsService _newsService;
-
+        private readonly ITrainingService _trainingService;
         public AdminController(IMainService mainService,
             IEventService eventService,
             IServiceService serviceService,
-            INewsService newsService
+            INewsService newsService,
+            ITrainingService trainingService
             )
         {
             _mainService = mainService;
             _serviceService = serviceService;
             _newsService = newsService;
             _eventService = eventService;
+            _trainingService = trainingService;
         }
 
         public IActionResult Index()
@@ -158,6 +160,36 @@ namespace VTC.Controllers
         }
 
         #endregion
+
+        #region TrainingParticipant
+        [HttpGet]
+        public IActionResult TrainingParticipant() {
+            var trainingParticipants = _trainingService.trainingParticipants();
+            return View(trainingParticipants);
+        }
+
+        #endregion
+
+        #region Training
+        
+        public IActionResult Trainings() {
+            var trainings = _trainingService.GetAll(1);
+            return View(trainings);
+        }
+        public IActionResult TrainingsStudent()
+        {
+            var trainings = _trainingService.GetAll(2);
+            return View(trainings);
+        }
+        public IActionResult TrainingsUSAID()
+        {
+            var trainings = _trainingService.GetAll(3);
+            return View(trainings);
+        }
+        #endregion
+
+
+
 
         #region News 
 
