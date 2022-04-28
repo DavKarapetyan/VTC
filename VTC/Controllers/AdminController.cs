@@ -1,21 +1,27 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using VTC.BLL.Services.Interfaces;
 using VTC.Common.ViewModels;
+using VTC.DataAccess.Data;
+using VTC.DataAccess.Entities;
 
 namespace VTC.Controllers
 {
     public class AdminController : Controller
     {
+        private readonly VTCContext _context;
         private readonly IMainService _mainService;
         private readonly IEventService _eventService;
         private readonly IServiceService _serviceService;
         private readonly INewsService _newsService;
         private readonly ITrainingService _trainingService;
+        private readonly IWebHostEnvironment _webHostEnvironment;
         public AdminController(IMainService mainService,
             IEventService eventService,
             IServiceService serviceService,
             INewsService newsService,
-            ITrainingService trainingService
+            ITrainingService trainingService,
+            IWebHostEnvironment webHostEnvironment,
+            VTCContext context
             )
         {
             _mainService = mainService;
@@ -23,6 +29,8 @@ namespace VTC.Controllers
             _newsService = newsService;
             _eventService = eventService;
             _trainingService = trainingService;
+            _webHostEnvironment = webHostEnvironment;
+            _context = context;
         }
 
         public IActionResult Index()
@@ -59,6 +67,25 @@ namespace VTC.Controllers
 
             return View();
         }
+        
+
+        public IActionResult AddGalleryImage() {
+            return View(_context.GalleryImages.ToList());
+        }
+        [HttpPost]
+        public async Task<IActionResult> AddGalleryImage(IFormFile uploadedFile) {
+            if (uploadedFile != null) {
+                string path = "/Files/" + uploadedFile.FileName;
+                using (var fileStream = new FileStream(_webHostEnvironment.WebRootPath + path, FileMode.Create)) {
+                    await uploadedFile.CopyToAsync(fileStream);
+                }
+                GalleryImage file = new GalleryImage() { Name = uploadedFile.FileName, Path = path };
+                _context.GalleryImages.Add(file);
+                _context.SaveChanges();
+            }
+            return RedirectToAction("Index");
+        }
+
 
         #region Event
 
@@ -187,9 +214,6 @@ namespace VTC.Controllers
             return View(trainings);
         }
         #endregion
-
-
-
 
         #region News 
 

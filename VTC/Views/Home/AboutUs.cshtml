@@ -1,5 +1,7 @@
 ﻿@model List<AboutUsViewModel>
-
+@using Microsoft.AspNetCore.Mvc.Localization
+ 
+@inject IViewLocalizer Localizer
 @section header{
 <link rel="stylesheet" href="~/css/about-us.min.css" />
 }
@@ -9,7 +11,7 @@
         <div class="row">
             <div class="col-md-12 ml-auto mr-auto">
                 <div class="brand">
-                    <h1 class="page-title fs-64">About Us</h1>
+                    <h1 class="page-title fs-64">@Localizer["AboutUsa"]</h1>
                 </div>
             </div>
         </div>
@@ -61,8 +63,8 @@
      <div class="container mt-200">
         <div class="row">
             <div class="col-lg-10 col-md-10 col-12 text-center mr-auto ml-auto">
-                <h2 class="fs-48 section-title">Website creators:</h2>
-                <p class="section-desc fs-24">Let's get acquainted with our website creators. They are our students. They are smart, purposeful. We are proud to have such smart students. They are less than eighteen years old, but they already have such a result․ And we are sure they will soon become full members of our VTC family.</p>
+                <h2 class="fs-48 section-title">@Localizer["Creators"]:</h2>
+                <p class="section-desc fs-24">@Localizer["Info"]</p>
                 <img src="~/image/students.jpg" alt="students" class="students-img img-fluid"/>
             </div>
         </div>

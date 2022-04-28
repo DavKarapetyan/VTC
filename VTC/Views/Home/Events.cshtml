@@ -1,5 +1,7 @@
 ﻿@model List<EventViewModel>
-
+@using Microsoft.AspNetCore.Mvc.Localization
+ 
+@inject IViewLocalizer Localizer
 @section header{
     <link rel="stylesheet" href="~/css/news-events-and-main.min.css" />
 }
@@ -8,8 +10,8 @@
     <div class="container">
         <div class="row">
             <div class="col-md-7 my-auto order-md-1 order-2">
-                <h1 class="page-title fs-64">News</h1>
-                <p class="section-desc fs-30">Follow VTC family news and the latest technology news on our website</p>
+                <h1 class="page-title fs-64">@Localizer["Eventsa"]</h1>
+                <p class="section-desc fs-30">@Localizer["Header"]</p>
             </div>
             <div class="col-md-5 order-md-2 order-1 text-md-border-right text-center">
                 <img class="img-fluid" src="~/image/news.gif" alt="trainings" />
@@ -21,8 +23,8 @@
     <div class="container">
         <nav>
             <div class="nav nav-tabs" id="nav-tab" role="tablist">
-                <a class="nav-item nav-link fs-24 section-desc active" id="nav-upcoming-tab" data-toggle="tab" href="#nav-upcoming" role="tab" aria-controls="nav-upcoming" aria-selected="true">Upcoming</a>
-                <a class="nav-item nav-link fs-24 section-desc" id="nav-past-tab" data-toggle="tab" href="#nav-past" role="tab" aria-controls="nav-past" aria-selected="false">Past</a>
+                <a class="nav-item nav-link fs-24 section-desc active" id="nav-upcoming-tab" data-toggle="tab" href="#nav-upcoming" role="tab" aria-controls="nav-upcoming" aria-selected="true">@Localizer["Upcoming"]</a>
+                <a class="nav-item nav-link fs-24 section-desc" id="nav-past-tab" data-toggle="tab" href="#nav-past" role="tab" aria-controls="nav-past" aria-selected="false">@Localizer["Past"]</a>
             </div>
         </nav>
         <div class="tab-content" id="nav-tabContent">
@@ -37,9 +39,9 @@
                                 </div>
                                 <div class="card-body">
                                     <p class="event-name fs-20">@item.Name</p>
-                                    <p class="event-date fs-16">On: <span>@item.Date.AddTicks(item.Time.Ticks).ToString("dd.MM.yyyy HH:mm")</span></p>
+                                    <p class="event-date fs-16">@Localizer["Ona"]: <span>@item.Date.AddTicks(item.Time.Ticks).ToString("dd.MM.yyyy HH:mm")</span></p>
                                     <p class="event-desc fs-16">@item.Description</p>
-                                    <a class="read-more fs-16" asp-action="EventPage" asp-route-id="@item.Id">Read more <img src="~/image/icons/angle-right.png" alt="arrow" /></a>
+                                    <a class="read-more fs-16" asp-action="EventPage" asp-route-id="@item.Id">@Localizer["Read"] <img src="~/image/icons/angle-right.png" alt="arrow" /></a>
                                 </div>
                             </div>
                         </div>
@@ -58,9 +60,9 @@
                                 </div>
                                 <div class="card-body">
                                     <p class="event-name fs-20">@item.Name</p>
-                                    <p class="event-date fs-16">On: <span>@item.Date.AddTicks(item.Time.Ticks).ToString("dd.MM.yyyy HH:mm")</span></p>
+                                    <p class="event-date fs-16">@Localizer["Ona"]: <span>@item.Date.AddTicks(item.Time.Ticks).ToString("dd.MM.yyyy HH:mm")</span></p>
                                     <p class="event-desc fs-16">@item.Description</p>
-                                    <a class="read-more fs-16" asp-action="EventPage" asp-route-id="@item.Id">Read more <img src="~/image/icons/angle-right.png" alt="arrow" /></a>
+                                    <a class="read-more fs-16" asp-action="EventPage" asp-route-id="@item.Id">@Localizer["Read"] <img src="~/image/icons/angle-right.png" alt="arrow" /></a>
                                 </div>
                             </div>
                         </div>

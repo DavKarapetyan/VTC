@@ -1,4 +1,5 @@
 using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Localization;
 using Microsoft.EntityFrameworkCore;
 using System.Globalization;
 using VTC.BLL.Services;
@@ -23,8 +24,27 @@ builder.Services.AddScoped<ITrainingService, TrainingService>();
 
 builder.Services.AddLocalization(l => l.ResourcesPath = "Resources");
 
+builder.Services.Configure<RequestLocalizationOptions>(options =>
+{
+    var supportedCultures = new[]
+    {
+        new CultureInfo("en"),
+        new CultureInfo("am"),
+        
+    };
+    options.DefaultRequestCulture = new RequestCulture("en");
+    options.SupportedUICultures = supportedCultures;
+    
+});
+
+
+
+
 builder.Services.AddIdentity<User, IdentityRole>()
     .AddEntityFrameworkStores<VTCContext>();
+
+
+
 
 var app = builder.Build();
 
@@ -35,29 +55,24 @@ if (!app.Environment.IsDevelopment())
     // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
     app.UseHsts();
 }
-
-var cultures = new[] {
-    new CultureInfo("am"),
-    new CultureInfo("ru"),
-    new CultureInfo("en"),
-};
-
-app.UseRequestLocalization(new RequestLocalizationOptions
-{
-    DefaultRequestCulture = new Microsoft.AspNetCore.Localization.RequestCulture("en"),
-    SupportedCultures = cultures,
-    SupportedUICultures = cultures,
-});
+app.UseDeveloperExceptionPage();
+app.UseRequestLocalization();
+app.UseStaticFiles();
+app.UseRouting();
 app.UseHttpsRedirection();
 app.UseStaticFiles();
+app.UseEndpoints(endpoints =>
+{
+    endpoints.MapControllerRoute(
+        name: "default",
+        pattern: "{controller=Home}/{action=Index}/{id?}");
+});
+
 
 app.UseRouting();
 
 app.UseAuthentication();
 app.UseAuthorization();
 
-app.MapControllerRoute(
-    name: "default",
-    pattern: "{controller=Home}/{action=Index}/{id?}");
 
 app.Run();

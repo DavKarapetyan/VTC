@@ -1,4 +1,7 @@
-﻿@section header{
+﻿@using Microsoft.AspNetCore.Mvc.Localization
+ 
+@inject IViewLocalizer Localizer
+@section header{
     <link rel="stylesheet" href="~/css/home.min.css" />
 }
 
@@ -7,7 +10,7 @@
         <div class="row">
             <div class="col-md-12 ml-auto mr-auto">
                 <div class="brand">
-                    <h1 class="page-title fs-64">WELCOME TO <br />VANADZOR TECHNOLOGY CENTER</h1>
+                    <h1 class="page-title fs-64">@Localizer["Header"]</h1>
                 </div>
             </div>
         </div>
@@ -17,7 +20,7 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-6 col-md-7 col-12 order-md-1 order-2">
-                <p class="section-desc fs-24">Vanadzor Technology Center (VTC) was established by the Enterprise Incubator Foundation with the support of Government of Armenia and the World Bank. The mission of the Center is to turn Vanadzor into a regional and international high-tech center by creating a dynamic environment of opportunities and services that will promote job creation, support talented youth and organizations in implementing innovative business ideas ultimately contributing to the sustainable development of the region.</p>
+                <p class="section-desc fs-24">@Localizer["About1"]</p>
             </div>
             <div class="col-lg-6 col-md-5 col-12 order-md-2 order-1 text-md-right text-center">
                 <img src="~/image/img-1.png" alt="Vanadzor Technology Center" class="section-img img-fluid" />
@@ -29,7 +32,7 @@
     <div class="container">
         <div class="row">
             <div class="col-12 text-center">
-                <h2 class="fs-48 section-title">Meet Our Family</h2>
+                <h2 class="fs-48 section-title">@Localizer["Family"]</h2>
             </div>
         </div>
     </div>
@@ -75,14 +78,14 @@
                 <img src="~/image/img-2.png" alt="Vanadzor Technology Center" class="section-img img-fluid" />
             </div>
             <div class="col-lg-6 col-md-7 col-12 text-right">
-                <p class="section-desc fs-24">VTC focuses on assisting technology companies in a variety of areas including business consultancy, mentoring, marketing and promotion, introduction to funding opportunities, establishment of business connections for increasing the competitiveness of companies in the global marketplace.</p>
+                <p class="section-desc fs-24">@Localizer["About2"]</p>
             </div>
         </div>
     </div>
     <div class="container mt-200">
         <div class="row">
             <div class="col-12 text-center">
-                <h2 class="fs-48 section-title">Meet Our Team</h2>
+                <h2 class="fs-48 section-title">@Localizer["Team"]</h2>
             </div>
         </div>
     </div>

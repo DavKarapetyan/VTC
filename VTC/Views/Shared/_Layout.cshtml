@@ -1,4 +1,8 @@
-﻿<!DOCTYPE html>
+﻿@using Microsoft.AspNetCore.Mvc.Localization
+ 
+@inject IViewLocalizer Localizer
+
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8" />
@@ -30,32 +34,30 @@
                             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                                 <ul class="navbar-nav ml-auto py-4 py-md-0">
                                     <li class="nav-item pl-4 pl-md-0 ml-0 ml-md-5 active">
-                                        <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Trainings</a>
+                                        <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">@Localizer["Trainingsa"]</a>
                                         <div class="dropdown-menu">
-                                            <a class="dropdown-item" asp-action="Trainings" asp-route-statusId="1" >Trainings</a>
-                                            <a class="dropdown-item" asp-action="Trainings" asp-route-statusId="2">Students trainings</a>
+                                            <a class="dropdown-item" asp-action="Trainings" asp-route-statusId="1" >@Localizer["Trainingsa"]</a>
+                                            <a class="dropdown-item" asp-action="Trainings" asp-route-statusId="2">@Localizer["StudentTrainingsa"]</a>
                                             <a class="dropdown-item" asp-action="Trainings" asp-route-statusId="3">USAID</a>
                                         </div>
                                     </li>
                                     <li class="nav-item pl-4 pl-md-0 ml-0 ml-md-5">
-                                        <a class="nav-link" asp-action="Service">Services</a>
+                                        <a class="nav-link" asp-action="Service">@Localizer["Servicesa"]</a>
                                     </li>
                                     <li class="nav-item pl-4 pl-md-0 ml-0 ml-md-5">
-                                        <a class="nav-link" asp-action="News">News</a>
+                                        <a class="nav-link" asp-action="News">@Localizer["Newsa"]</a>
                                     </li>
                                     <li class="nav-item pl-4 pl-md-0 ml-0 ml-md-5">
-                                        <a class="nav-link" asp-action="Events">Events</a>
+                                        <a class="nav-link" asp-action="Events">@Localizer["Eventsa"]</a>
                                     </li>
                                     <li class="nav-item pl-4 pl-md-0 ml-0 ml-md-5">
-                                        <a class="nav-link" asp-action="AboutUs">About Us </a>
+                                        <a class="nav-link" asp-action="AboutUs">@Localizer["About Usa"]</a>
                                     </li>
-                                    <li class="nav-item pl-4 pl-md-0 ml-0 ml-md-5 active">
-                                        <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Languge</a>
-                                        <div class="dropdown-menu">
-                                            <a class="dropdown-item" href="#">Armenian</a>
-                                            <a class="dropdown-item" href="#">English</a>
-                                        </div>
-                                    </li>
+                                    @await Html.PartialAsync("_SelectLanguagePartial")
+                                    
+
+
+                                    
                                 </ul>
                             </div>
                         </nav>

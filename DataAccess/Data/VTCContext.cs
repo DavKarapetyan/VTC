@@ -24,5 +24,6 @@ namespace VTC.DataAccess.Data
         public DbSet<TrainingParticipant> TrainingParticipants { get; set; }
         public DbSet<TrainingLevel> TrainingLevels { get; set; }
         public DbSet<TrainingTopic> TrainingTopics { get; set; }
+        public DbSet<GalleryImage> GalleryImages { get; set; }
     }
 }
