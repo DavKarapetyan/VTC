@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using VTC.DataAccess.Data;
 
@@ -11,9 +12,10 @@ using VTC.DataAccess.Data;
 namespace DataAccess.Migrations
 {
     [DbContext(typeof(VTCContext))]
-    partial class VTCContextModelSnapshot : ModelSnapshot
+    [Migration("20220427075553_second")]
+    partial class second
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -283,16 +285,11 @@ namespace DataAccess.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int?>("NewsId")
-                        .HasColumnType("int");
-
                     b.Property<string>("Path")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
-
-                    b.HasIndex("NewsId");
 
                     b.ToTable("GalleryImages");
                 });
@@ -636,13 +633,6 @@ namespace DataAccess.Migrations
                         .IsRequired();
                 });
 
-            modelBuilder.Entity("VTC.DataAccess.Entities.GalleryImage", b =>
-                {
-                    b.HasOne("VTC.DataAccess.Entities.News", null)
-                        .WithMany("Images")
-                        .HasForeignKey("NewsId");
-                });
-
             modelBuilder.Entity("VTC.DataAccess.Entities.TrainingLevel", b =>
                 {
                     b.HasOne("VTC.DataAccess.Entities.Training", "Training")
@@ -674,11 +664,6 @@ namespace DataAccess.Migrations
                         .IsRequired();
 
                     b.Navigation("Training");
-                });
-
-            modelBuilder.Entity("VTC.DataAccess.Entities.News", b =>
-                {
-                    b.Navigation("Images");
                 });
 
             modelBuilder.Entity("VTC.DataAccess.Entities.Training", b =>

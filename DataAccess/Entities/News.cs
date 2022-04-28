@@ -12,5 +12,6 @@ namespace VTC.DataAccess.Entities
         public string Title { get; set; }
         public string Description { get; set; }
         public string MainImage { get; set; }
+        public ICollection<GalleryImage> Images { get; set; }
     }
 }

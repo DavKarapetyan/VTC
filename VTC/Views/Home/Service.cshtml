@@ -1,5 +1,7 @@
 ﻿@model List<ServiceViewModel>
-
+@using Microsoft.AspNetCore.Mvc.Localization
+ 
+@inject IViewLocalizer Localizer
 @section header{
 <link rel="stylesheet" href="~/css/services.min.css" />
 }
@@ -7,8 +9,8 @@
     <div class="container">
         <div class="row">
             <div class="col-md-6 my-auto order-md-1 order-2">
-                <h1 class="page-title fs-64">Services</h1>
-                <p class="section-desc fs-24">Vanadzor Technology Center offers a wide range of services, promoting the establishment of businesses, their further development both in the WTC environment and beyond, in Vanadzor, Lori region.</p>
+                <h1 class="page-title fs-64">@Localizer["Servicesa"]</h1>
+                <p class="section-desc fs-24">@Localizer["Header"]</p>
             </div>
             <div class="col-md-6 order-md-2 order-1 text-md-border-right text-center">
                 <img class="img-fluid" src="~/image/services.png" alt="trainings" />
@@ -20,17 +22,17 @@
     <div class="container">
         <div class="row">
             <div class="col-12">
-                <p class="section-title fs-48">Our Services</p>
-                <p class="section-desc fs-24">Our services are available to small, medium and large enterprises that intend to:</p>
+                <p class="section-title fs-48">@Localizer["OurServicesa"]</p>
+                <p class="section-desc fs-24">@Localizer["Service1"]</p>
                 <div class="desc">
-                    <p class="section-desc fs-24"><img src="~/image/icons/circle-check-yellow.png" class="img-fluid" alt="icon" /> expand activities</p>
-                    <p class="section-desc fs-24"><img src="~/image/icons/circle-check-yellow.png" class="img-fluid" alt="icon" /> introduce an effective management system</p>
-                    <p class="section-desc fs-24"><img src="~/image/icons/circle-check-yellow.png" class="img-fluid" alt="icon" /> attract investments</p>
-                    <p class="section-desc fs-24"><img src="~/image/icons/circle-check-yellow.png" class="img-fluid" alt="icon" /> develop, import and introduce technical innovations</p>
-                    <p class="section-desc fs-24"><img src="~/image/icons/circle-check-yellow.png" class="img-fluid" alt="icon" /> conquer new markets</p>
-                    <p class="section-desc fs-24"><img src="~/image/icons/circle-check-yellow.png" class="img-fluid" alt="icon" /> develop the qualification of the workforce</p>
+                    <p class="section-desc fs-24"><img src="~/image/icons/circle-check-yellow.png" class="img-fluid" alt="icon" /> @Localizer["Point1"]</p>
+                    <p class="section-desc fs-24"><img src="~/image/icons/circle-check-yellow.png" class="img-fluid" alt="icon" /> @Localizer["Point2"]</p>
+                    <p class="section-desc fs-24"><img src="~/image/icons/circle-check-yellow.png" class="img-fluid" alt="icon" /> @Localizer["Point3"]</p>
+                    <p class="section-desc fs-24"><img src="~/image/icons/circle-check-yellow.png" class="img-fluid" alt="icon" /> @Localizer["Point4"]</p>
+                    <p class="section-desc fs-24"><img src="~/image/icons/circle-check-yellow.png" class="img-fluid" alt="icon" /> @Localizer["Point5"]</p>
+                    <p class="section-desc fs-24"><img src="~/image/icons/circle-check-yellow.png" class="img-fluid" alt="icon" /> @Localizer["Point6"]</p>
                 </div>
-                <p class="section-desc fs-24">Favorable business environment, technological sector development - company progress - this is our goal and mission.</p>
+                <p class="section-desc fs-24">@Localizer["Service2"]</p>
             </div>
         </div>
         <div class="" id="services">

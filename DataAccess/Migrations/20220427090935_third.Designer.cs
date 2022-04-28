@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using VTC.DataAccess.Data;
 
@@ -11,9 +12,10 @@ using VTC.DataAccess.Data;
 namespace DataAccess.Migrations
 {
     [DbContext(typeof(VTCContext))]
-    partial class VTCContextModelSnapshot : ModelSnapshot
+    [Migration("20220427090935_third")]
+    partial class third
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

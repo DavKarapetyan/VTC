@@ -30,6 +30,7 @@
     <Folder Include="wwwroot\css\admin\" />
     <Folder Include="wwwroot\image\admin\" />
     <Folder Include="wwwroot\js\admin\" />
+    <Folder Include="wwwroot\Files\" />
   </ItemGroup>
 
   <ItemGroup>

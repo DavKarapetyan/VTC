@@ -76,11 +76,6 @@ namespace VTC.Controllers
             return View(services);
         }
 
-        public IActionResult Training()
-        {
-
-            return View();
-        }
 
         public async Task<IActionResult> News()
         {
@@ -102,7 +97,7 @@ namespace VTC.Controllers
         }
 
         public IActionResult Trainings(int statusId) {
-
+            
             var trainings = _trainingService.GetAll(statusId);
             
             return View(trainings);

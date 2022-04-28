@@ -1,4 +1,8 @@
 ﻿@model List<TrainingViewModel>
+@using Microsoft.AspNetCore.Mvc.Localization
+ 
+@inject IViewLocalizer Localizer
+
 
 @section header{
 <link rel="stylesheet" href="~/css/trainings.min.css" />
@@ -7,16 +11,16 @@
     <div class="container">
         <div class="row">
             <div class="col-md-6 my-auto order-md-1 order-2">
-                <h1 class="page-title fs-64">Trainings</h1>
-                <p class="section-desc fs-24">EIF and VTC Announcements of information technology programming, basic mathematics, English, capacity building new start of multimedia courses, on a paid basis. </p>
+                <h1 class="page-title fs-64">@Localizer["Traininga"]</h1>
+                <p class="section-desc fs-24"> @Localizer["Header"]</p>
                 <div class="row">
                     <div class="col-4">
                         <p class="result-number fs-48">2000+</p>
-                        <p class="result-name fs-24">students</p>
+                        <p class="result-name fs-24">@Localizer["Students"]</p>
                     </div>
                     <div class="col-4">
                         <p class="result-number fs-48">200+</p>
-                        <p class="result-name fs-24">courses</p>
+                        <p class="result-name fs-24">@Localizer["Courses"]</p>
                     </div>
                 </div>
             </div>
@@ -30,16 +34,16 @@
     <div class="container">
         <div class="row">
             <div class="col-12">
-                <h2 class="fs-48 section-title">Our Courses</h2>
+                <h2 class="fs-48 section-title">@Localizer["OurCoursesa"]</h2>
             </div>
         </div>
         <nav>
             <div class="nav nav-tabs" id="nav-tab" role="tablist">
-                <a class="nav-item nav-link fs-24 section-desc active" id="nav-tab" data-toggle="tab" href="#nav" role="tab" aria-controls="nav" aria-selected="true">All</a>
-                <a class="nav-item nav-link fs-24 section-desc" id="nav-prog-tab" data-toggle="tab" href="#nav-prog" role="tab" aria-controls="nav-prog" aria-selected="true">Programming</a>
-                <a class="nav-item nav-link fs-24 section-desc" id="nav-engin-tab" data-toggle="tab" href="#nav-engin" role="tab" aria-controls="nav-engin" aria-selected="false">Engineering</a>
-                <a class="nav-item nav-link fs-24 section-desc" id="nav-design-tab" data-toggle="tab" href="#nav-design" role="tab" aria-controls="nav-design" aria-selected="false">Design</a>
-                <a class="nav-item nav-link fs-24 section-desc" id="nav-other-tab" data-toggle="tab" href="#nav-other" role="tab" aria-controls="nav-other" aria-selected="false">Other</a>
+                <a class="nav-item nav-link fs-24 section-desc active" id="nav-tab" data-toggle="tab" href="#nav" role="tab" aria-controls="nav" aria-selected="true">@Localizer["All"]</a>
+                <a class="nav-item nav-link fs-24 section-desc" id="nav-prog-tab" data-toggle="tab" href="#nav-prog" role="tab" aria-controls="nav-prog" aria-selected="true">@Localizer["Programming"]</a>
+                <a class="nav-item nav-link fs-24 section-desc" id="nav-engin-tab" data-toggle="tab" href="#nav-engin" role="tab" aria-controls="nav-engin" aria-selected="false">@Localizer["Engineering"]</a>
+                <a class="nav-item nav-link fs-24 section-desc" id="nav-design-tab" data-toggle="tab" href="#nav-design" role="tab" aria-controls="nav-design" aria-selected="false">@Localizer["Design"]</a>
+                <a class="nav-item nav-link fs-24 section-desc" id="nav-other-tab" data-toggle="tab" href="#nav-other" role="tab" aria-controls="nav-other" aria-selected="false">@Localizer["Other"]</a>
             </div>
         </nav>
         <div class="tab-content" id="nav-tabContent">
@@ -72,7 +76,7 @@
     <div class="container">
         <div class="row">
             <div class="col-12">
-                <h2 class="fs-48 section-title">Success Stories</h2>
+                <h2 class="fs-48 section-title">@Localizer["Success Stories"]</h2>
             </div>
         </div>
         <div class="owl-carousel owl-carousel-student-review">
