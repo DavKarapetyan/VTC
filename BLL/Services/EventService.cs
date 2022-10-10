@@ -55,6 +55,7 @@ namespace VTC.BLL.Services
                 MainImage = a.MainImage,
                 Name = a.Name,
                 Time = a.Time,
+                ShortDescription = a.Description.Remove(350) + "..."
             }).ToList();
 
             return events;

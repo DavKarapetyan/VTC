@@ -125,8 +125,6 @@ namespace VTC.Controllers
         [HttpPost]
         public async Task<IActionResult> AddTrainingParticipant(TrainingParticipantViewModel model)
         {
-            
-
             _trainingService.AddTrainingPart(model);
             return RedirectToAction("Index");
         }

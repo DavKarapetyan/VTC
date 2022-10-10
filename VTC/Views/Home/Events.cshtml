@@ -40,7 +40,7 @@
                                 <div class="card-body">
                                     <p class="event-name fs-20">@item.Name</p>
                                     <p class="event-date fs-16">@Localizer["Ona"]: <span>@item.Date.AddTicks(item.Time.Ticks).ToString("dd.MM.yyyy HH:mm")</span></p>
-                                    <p class="event-desc fs-16">@item.Description</p>
+                                    <p class="event-desc fs-16">@item.ShortDescription</p>
                                     <a class="read-more fs-16" asp-action="EventPage" asp-route-id="@item.Id">@Localizer["Read"] <img src="~/image/icons/angle-right.png" alt="arrow" /></a>
                                 </div>
                             </div>
@@ -61,7 +61,7 @@
                                 <div class="card-body">
                                     <p class="event-name fs-20">@item.Name</p>
                                     <p class="event-date fs-16">@Localizer["Ona"]: <span>@item.Date.AddTicks(item.Time.Ticks).ToString("dd.MM.yyyy HH:mm")</span></p>
-                                    <p class="event-desc fs-16">@item.Description</p>
+                                    <p class="event-desc fs-16">@item.ShortDescription</p>
                                     <a class="read-more fs-16" asp-action="EventPage" asp-route-id="@item.Id">@Localizer["Read"] <img src="~/image/icons/angle-right.png" alt="arrow" /></a>
                                 </div>
                             </div>

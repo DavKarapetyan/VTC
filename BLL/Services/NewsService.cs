@@ -49,6 +49,7 @@ namespace VTC.BLL.Services
                 Title = a.Title,
                 MainImage = a.MainImage,
                 CreatedDate = a.CreatedDate,
+                ShortDescription = a.Description.Remove(350) + "..."
             }).ToList();
 
             return news;

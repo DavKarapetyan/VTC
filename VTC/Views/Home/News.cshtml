@@ -35,12 +35,12 @@
                         <div class="col-md-4 col-12">
                             <div class="card">
                                 <div class="card-header">
-                                    <img src="~/image/event-img.png" alt="news" />
+                                    <img src="@item.MainImage" alt="news" />
                                 </div>
                                 <div class="card-body">
                                     <p class="event-name fs-20">@item.Title</p>
                                     <p class="event-date fs-16">@Localizer["Ona"]: <span>@item.CreatedDate.ToString("dd.MM.yyyy")</span></p>
-                                    <p class="event-desc fs-16">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when...</p>
+                                    <p class="event-desc fs-16">@item.ShortDescription</p>
                                     <a class="read-more fs-16" asp-action="NewsPage" asp-route-id="@item.Id">@Localizer["Read"]<img src="~/image/icons/angle-right.png" alt="arrow" /></a>
                                 </div>
                             </div>

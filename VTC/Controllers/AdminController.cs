@@ -190,8 +190,8 @@ namespace VTC.Controllers
 
         #region TrainingParticipant
         [HttpGet]
-        public IActionResult TrainingParticipant() {
-            var trainingParticipants = _trainingService.trainingParticipants();
+        public IActionResult TrainingParticipant(int? id) {
+            var trainingParticipants = _trainingService.trainingParticipants().Where(a => a.TrainingId == id).ToList();
             return View(trainingParticipants);
         }
 
@@ -212,6 +212,31 @@ namespace VTC.Controllers
         {
             var trainings = _trainingService.GetAll(3);
             return View(trainings);
+        }
+        public async Task<IActionResult> ManageTraining(int? id)
+        {
+            if (id.HasValue)
+            {
+                var trainings = await _trainingService.GetById(id.Value);
+                return PartialView("_ManageTraining", trainings);
+            }
+
+            return PartialView("_ManageTraining");
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> ManageTraining(TrainingViewModel model)
+        {
+            if (model.Id == 0)
+            {
+                await _trainingService.Add(model);
+            }
+            else
+            {
+                await _trainingService.Edit(model);
+            }
+
+            return RedirectToAction("Training");
         }
         #endregion
 
